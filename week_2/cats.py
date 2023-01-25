@@ -32,3 +32,4 @@ cat2 = {
 print(cat[1]['size'])
 
 print(cat2['pepper']['size'])
+print(cat[4])
