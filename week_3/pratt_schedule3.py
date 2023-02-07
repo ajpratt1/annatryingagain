@@ -1,6 +1,3 @@
-from typing import ItemsView
-
-
 schedule = {
 	"monday" : {
 
@@ -164,14 +161,25 @@ schedule = {
 
 
 
-#print the name of the first class on Wednesday in room 612, with the name of the prof and when the start is.
-#please note my output formate: <class name> - <prof name> - <start time>
+#loop through each day, print out the day name.
+#Sort the rooms for the day and loop through them and print the room number.
+#Then loop through each class and print it out.
 
-#output sample (not the correct output:
+#output sample:
 
 # ❯ python3 pratt_schedule3.py
-# Human-Information Behavior - Pattuelli - 6.5
-# 
+# monday
+# 602
+# Conservation and Preservation
+# 609
+# Info Services & Resources
+# ...
 
-class_to_print = schedule['wednesday'][612][0]
-print(f"{class_to_print['class']} - {class_to_print['prof']} - {class_to_print['start']}")
+for day in schedule:
+	print(day)
+	x = sorted(schedule[day])
+	for room in x:
+		print(room)
+		y = schedule.get(day).get(room)
+		for cl in y:
+			print(cl.get('class'))
