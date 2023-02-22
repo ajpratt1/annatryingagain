@@ -40,12 +40,12 @@ with open('Artworks.json', 'r') as file:
      for artwork in json_file:
       nationalities = artwork['Nationality']
       for nat in nationalities:
-         if nat in nationalities:
-            nationality_data.append(artwork)
+         if nat in nationality_data:
+            nationality_data[nat].append(artwork)
          else:
             nationality_data[nat] = []
             nationality_data[nat].append(artwork)
 
 for nat in nationality_data:
    with open(f'res/{nat}.json', 'w') as out_file:
-      json.dumps(nationality_data[nat], out_file, indent=2)
+      json.dump(nationality_data[nat], out_file, indent=2)
