@@ -41,7 +41,7 @@ with open('Artworks.json', 'r') as file:
       nationalities = artwork['Nationality']
       for nat in nationalities:
          if nat in nationalities:
-            nationality_data[nat].append(artwork)
+            nationality_data.append(artwork)
          else:
             nationality_data[nat] = []
             nationality_data[nat].append(artwork)
