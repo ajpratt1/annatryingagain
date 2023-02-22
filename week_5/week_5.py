@@ -33,7 +33,6 @@
 
 import json
  
-# Opening JSON file
 nationality_data = {}
 
 with open('Artworks.json', 'r') as file:
@@ -41,10 +40,12 @@ with open('Artworks.json', 'r') as file:
      for artwork in json_file:
       nationalities = artwork['Nationality']
       for nat in nationalities:
-         nationality_data[nat].append(artwork)
-      else:
-         nationality_data[nat] = [artwork]
+         if nat in nationalities:
+            nationality_data[nat].append(artwork)
+         else:
+            nationality_data[nat] = []
+            nationality_data[nat].append(artwork)
 
 for nat in nationality_data:
    with open(f'res/{nat}.json', 'w') as out_file:
-      json.dump(nationality_data[nat], out_file, indent=2)
+      json.dumps(nationality_data[nat], out_file, indent=2)
