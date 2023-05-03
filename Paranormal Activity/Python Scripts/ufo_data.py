@@ -53,13 +53,5 @@ with open('occurences.csv', 'w', newline='') as csvfile:
         writer.writerow(occurence)
 print("finished")
 
-# date_find = soup.find('p')
-# dates = soup.find_all('td')
-
-# for date in dates: 
-#     link = date.find('a')
-#     if link is not None:
-#         hrefs = link['href']
-#         date_hrefs.append(hrefs)
-# html_links = (f'{base_url}{date_hrefs}')
-
+date_find = soup.find('p')
+dates = soup.find_all('td')

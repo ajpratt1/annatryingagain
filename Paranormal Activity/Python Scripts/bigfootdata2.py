@@ -68,7 +68,7 @@ for rh in report_hrefs:
             data[key] = value
 
     sighting_data.append(data)
-print("success!")
+print("finished!")
 
 if 1 == 1:
     with open('bigfoot_sightings_US.csv', 'w', newline='', encoding='utf-8') as file:
